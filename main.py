@@ -1,7 +1,7 @@
 import websocket
 import time
 import re,random
-classids = [
+lessondetails = [
     '42/lookTime,["message",{"data":{"cid":18538,"csid":73008,"upid":"6255520","type":4,"token":"9a3965dc181099313f1ca47eb94c318c","time":94.982709,"key":"286847521544157","reqSource":0,"wid":null,"moldType":0}}]',
     '42/lookTime,["message",{"data":{"cid":15214,"csid":53700,"upid":"6255520","type":4,"token":"9a3965dc181099313f1ca47eb94c318c","time":3.905758,"key":"352559868122590","reqSource":0,"wid":null,"moldType":0}}]',
     '42/lookTime,["message",{"data":{"cid":18482,"csid":72776,"upid":6255520,"type":4,"token":"9a3965dc181099313f1ca47eb94c318c","time":14.952045,"key":"420577864522462","reqSource":0,"wid":null,"moldType":0}}]',
@@ -30,7 +30,7 @@ def on_message(ws, message):
         if match:
             look_time = match.group(1)
             if int(look_time)> 5*60*60:
-                message4=random.choice(classids)
+                message4=random.choice(lessondetails)
         time.sleep(3)
         ws.send(message3)
     elif message.startswith("3"):
@@ -48,7 +48,6 @@ def on_open(ws):
 
 if __name__ == "__main__":
     wssurl = "wss://newwebnew.zgzjzj.com/socket.io/?token=9a3965dc181099313f1ca47eb94c318c&cid=18482&csid=72778&type=1&upid=6255520&key=615995779790336&wid=NaN&reqSource=0&EIO=3&transport=websocket"
-    websocket.enableTrace(False)
     ws = websocket.WebSocketApp(wssurl,
                                 on_message=on_message,
                                 on_error=on_error,
