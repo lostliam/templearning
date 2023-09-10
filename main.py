@@ -1,7 +1,6 @@
 import websocket
 import time
 import re,random
-websocket.enableTrace(False)
 classids = [
     '42/lookTime,["message",{"data":{"cid":18538,"csid":73008,"upid":"6255520","type":4,"token":"9a3965dc181099313f1ca47eb94c318c","time":94.982709,"key":"286847521544157","reqSource":0,"wid":null,"moldType":0}}]',
     '42/lookTime,["message",{"data":{"cid":15214,"csid":53700,"upid":"6255520","type":4,"token":"9a3965dc181099313f1ca47eb94c318c","time":3.905758,"key":"352559868122590","reqSource":0,"wid":null,"moldType":0}}]',
@@ -13,7 +12,6 @@ classids = [
     '42/lookTime,["message",{"data":{"cid":5879,"csid":16526,"upid":6255520,"type":4,"token":"9a3965dc181099313f1ca47eb94c318c","time":3.920325,"key":"191903525324193","reqSource":0,"wid":null,"moldType":0}}]'
 ]
 
-# 将相同的消息内容用变量代替
 message1 = "40/lookTime"
 message4 = '42/lookTime,["message",{"data":{"cid":18482,"csid":72776,"upid":"6255520","type":1,"token":"9a3965dc181099313f1ca47eb94c318c","time":11,"key":"633277192270593","reqSource":0,"wid":null,"moldType":0}}]'
 message3 = "2"
