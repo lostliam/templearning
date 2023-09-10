@@ -1,0 +1,27 @@
+name: 'test1'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+     - main
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+    - name: Install Python
+      run: |
+        sudo apt update && \
+        sudo apt install python3 && \
+        pip3 install websocket-client
+    - name: test
+      timeout-minutes: 360
+      run: |
+        python3 main.py 
