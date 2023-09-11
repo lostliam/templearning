@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches:
-     - main
+      - main
+  schedule:
+    - cron: "0 0,6,12,18 * * *"
 
 
 
@@ -22,6 +24,5 @@ jobs:
         sudo apt install python3 && \
         pip3 install websocket-client
     - name: test
-      run: |
-        timeout minutes:1600
+      run: |     
         python3 main.py 
