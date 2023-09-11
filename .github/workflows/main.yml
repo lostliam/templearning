@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0,6,12,18 * * *"
+    - cron: "50 * * * *"
 
 
 
@@ -24,5 +24,6 @@ jobs:
         sudo apt install python3 && \
         pip3 install websocket-client
     - name: test
-      run: |     
+      run: |
+        timeout-minutes: 59     
         python3 main.py 
