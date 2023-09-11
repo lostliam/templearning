@@ -24,6 +24,6 @@ jobs:
         sudo apt install python3 && \
         pip3 install websocket-client
     - name: test
-      run: |
-        timeout-minutes: 59     
+      timeout-minutes: 59 
+      run: |    
         python3 main.py 
