@@ -27,7 +27,7 @@ def on_message(new_ws, message):
     elif message.startswith("42/lookTime"):
         print(message)
         match = re.search(r'"lookTime":(\d+)', message)
-        if match and float(match.group(1)) > 3.2 * 60 * 60:
+        if match and float(match.group(1)) > 3.6 * 60 * 60:
             print('True')
             new_ws.close()  # 关闭当前的WebSocket连接
             message4 = random.choice(classids)
