@@ -4,12 +4,8 @@ import re,random
 classids = [
     '42/lookTime,["message",{"data":{"cid":18538,"csid":73008,"upid":"6255520","type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":157.981332,"key":"634792018203748","reqSource":0,"wid":null,"moldType":0}}]',
     '42/lookTime,["message",{"data":{"cid":15214,"csid":53700,"upid":"6255520","type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":3.905758,"key":"352559868122590","reqSource":0,"wid":null,"moldType":0}}]',
-    '42/lookTime,["message",{"data":{"cid":18482,"csid":72776,"upid":6255520,"type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":14.952045,"key":"420577864522462","reqSource":0,"wid":null,"moldType":0}}]',
-    '42/lookTime,["message",{"data":{"cid":6449,"csid":18459,"upid":6255520,"type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":3.904323,"key":"344012491077215","reqSource":0,"wid":null,"moldType":0}}]',
     '42/lookTime,["message",{"data":{"cid":17938,"csid":69285,"upid":6255520,"type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":3.92059,"key":"355744184163808","reqSource":0,"wid":null,"moldType":0}}]',
-    '42/lookTime,["message",{"data":{"cid":17949,"csid":69357,"upid":6255520,"type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":3.854015,"key":"296716742604587","reqSource":0,"wid":null,"moldType":0}}]',
-    '42/lookTime,["message",{"data":{"cid":5878,"csid":16523,"upid":6255520,"type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":3.893309,"key":"952537441592507","reqSource":0,"wid":null,"moldType":0}}]',
-    '42/lookTime,["message",{"data":{"cid":5879,"csid":16526,"upid":6255520,"type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":3.920325,"key":"191903525324193","reqSource":0,"wid":null,"moldType":0}}]'
+    '42/lookTime,["message",{"data":{"cid":5878,"csid":16523,"upid":6255520,"type":4,"token":"2f9c8ac1af3e4e17364a2a8dc6161b41","time":3.893309,"key":"952537441592507","reqSource":0,"wid":null,"moldType":0}}]'
 ]
 message1 = "40/lookTime"
 message3 = "2"
@@ -21,7 +17,7 @@ import re
 import websocket
 
 def on_message(new_ws, message):
-    global message4
+    global message4  
     if message.startswith("0"):
         time.sleep(3)
         new_ws.send(message1)
